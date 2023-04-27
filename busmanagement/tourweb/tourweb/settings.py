@@ -39,18 +39,31 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tours.apps.ToursConfig',
     'ckeditor',
-    'ckeditor_uploader'
+    'rest_framework.authtoken',
+    'drf_yasg',
+    'rest_framework_swagger',
+    'ckeditor_uploader',
+    'corsheaders'
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':
+    'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100,
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'  # <-- Here
+}
 
 ROOT_URLCONF = 'tourweb.urls'
 
@@ -75,6 +88,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tourweb.wsgi.application'
 
+CORS_ALLOWED_WHITELIST = [
+    "http://localhost:3000",
+    "http://127.0.0.1:9000",
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
