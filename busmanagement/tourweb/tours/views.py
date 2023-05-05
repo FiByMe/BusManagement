@@ -2,10 +2,10 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import action
 
-from .serializers import BusCompanySerializer, UserSerializer
+from .serializers import BusCompanySerializer, UserSerializer, TripSerializer
 from rest_framework import viewsets, generics, parsers, permissions, status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView
-from .models import BusCompany
+from .models import BusCompany, Trip
 from django.contrib.auth.models import User
 
 
@@ -39,3 +39,10 @@ class ListBusCompany(ListCreateAPIView):
         return JsonResponse({
             'message': 'Create a new Company unsuccessful!'
         }, status=status.HTTP_400_BAD_REQUEST)
+
+class ListTripOfCompany(ListCreateAPIView):
+    model = Trip
+    serializer_class = TripSerializer
+
+    def get_queryset(self):
+        return Trip.objects.all()
