@@ -11,7 +11,7 @@ class Login extends Component {
         console.log(this.state.credentials);
         fetch('http://127.0.0.1:8000/auth/', {
             method: 'POST',
-            header: {'Content-Type': 'application/json'}, 
+            header: {'Content-Type': 'text/char'}, 
             body: JSON.stringify(this.state.credentials)
         }).then (
             data => {
