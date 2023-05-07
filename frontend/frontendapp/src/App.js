@@ -1,10 +1,9 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "../Layouts/Header/Header";
-import Login from "../Layouts/Login";
+import Header from "../src/components/Layouts/Header/Header";
+import Login from "../src/components/Layouts/Login";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 
 
 // function Home() {
