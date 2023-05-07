@@ -1,6 +1,15 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from ckeditor.fields import RichTextField
+
+
+# class User(AbstractUser):
+#     avatar = models.ImageField(upload_to='users/%Y/%m', null=True)
+#     phone = models.CharField(unique=True, null=True, max_length=11)
+#     role = models.CharField(max_length=45, default=None, null=True)
+#
+#     def __str__(self):
+#         return self.username
 
 
 class BaseModel(models.Model):
@@ -17,6 +26,7 @@ class BusCompany(models.Model):
     is_verified = models.BooleanField(default=False)
     is_accepting_delivery = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
+    models.ForeignKey(User, on_delete=models.CASCADE, related_name='buscompanies')
 
     def __str__(self):
         return self.name

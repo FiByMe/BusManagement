@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import BusCompany, Trip, Bus, Route, Ticket, Delivery
+from .models import BusCompany, Trip, Bus, Route, Ticket, Delivery, Review
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
@@ -55,3 +55,10 @@ class DeliverySerializer(serializers.ModelSerializer):
     class Meta:
         model = Delivery
         fields = '__all__'
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = '__all__'
+

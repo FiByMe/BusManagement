@@ -1,4 +1,5 @@
 import React, { Component} from 'react'
+import axios from 'axios'
 
 
 class Login extends Component {
@@ -9,11 +10,14 @@ class Login extends Component {
 
     login = event => {
         console.log(this.state.credentials);
-        fetch('http://127.0.0.1:8000/auth/', {
+        axios({
             method: 'POST',
-            header: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(this.state.credentials)
-        }).then (
+            url: 'http://127.0.0.1:8000/auth/',
+            data: {
+              username: this.state.credentials.username,
+              password: this.state.credentials.password
+            }
+          }).then (
             data => {
                 console.log(data);
             }

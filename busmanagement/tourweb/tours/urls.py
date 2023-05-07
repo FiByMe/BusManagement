@@ -2,12 +2,16 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from rest_framework import routers
-from .views import ListBusCompany, UserViewSet
+from .views import CompaniesView, UserViewSet, TripView, RouteView, TicketView, BusView
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet)
+router.register('trips', TripView)
+router.register('routes', RouteView)
+router.register('buses', BusView)
+router.register('tickets', TicketView)
+router.register('companies', CompaniesView)
 
 urlpatterns = [
-    path('companies', views.ListBusCompany.as_view()),
     path('', include(router.urls))
 ]

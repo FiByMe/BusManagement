@@ -88,10 +88,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tourweb.wsgi.application'
 
-CORS_ALLOWED_WHITELIST = [
-    "http://localhost:3000",
-    "http://127.0.0.1:9000",
-]
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
