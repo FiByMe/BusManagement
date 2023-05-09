@@ -1,16 +1,18 @@
 const Header = () => {
   return (
     <>
-      <div className="hero_area">
-        <div className="bg-box">
-          <img src="https://cdn.dribbble.com/userupload/3166340/file/original-7c0949addb967b19d37ee942722c1fc0.png?compress=1&resize=1024x768" alt="" />
-        </div>
-        {/* header section strats */}
-        <header className="header_section">
+        <div className="hero_area">
+          <div className="bg-box">
+            <img
+              src="https://cdn.dribbble.com/userupload/3166340/file/original-7c0949addb967b19d37ee942722c1fc0.png?compress=1&resize=1024x768"
+              alt=""
+            />
+          </div>
+
           <div className="container">
             <nav className="navbar navbar-expand-lg custom_nav-container ">
-              <a className="navbar-brand" href="#">
-                <span>Logo</span>
+              <a className="navbar-brand">
+                <span>BM</span>
               </a>
               <button
                 className="navbar-toggler"
@@ -50,7 +52,7 @@ const Header = () => {
                   </li>
                 </ul>
                 <div className="user_option">
-                  <a href className="user_link">
+                  <a href="#" className="user_link">
                     <i className="fa fa-user" aria-hidden="true" />
                   </a>
                   <a className="cart_link" href="#">
@@ -91,21 +93,6 @@ const Header = () => {
                           />
                         </g>
                       </g>
-                      {/* <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g> */}
                     </svg>
                   </a>
                   <form className="form-inline">
@@ -116,100 +103,40 @@ const Header = () => {
                       <i className="fa fa-search" aria-hidden="true" />
                     </button>
                   </form>
-                  <a href className="order_online">
-                    Order Online
+                  <a
+                    className="order_online"
+                    href="#"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Book tickets
                   </a>
                 </div>
               </div>
             </nav>
           </div>
-        </header>
-        {/* end header section */}
-        {/* slider section */}
-        <section className="slider_section ">
-          <div
-            id="customCarousel1"
-            className="carousel slide"
-            data-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7 col-lg-6 ">
-                      <div className="detail-box">
-                        <h1>BusManagement</h1>
-                        <p>Your satisfaction is our motivation to improve.</p>
-                        <div className="btn-box">
-                          <a className="btn1">Order Now</a>
+          <section className="slider_section ">
+            <div
+              id="customCarousel1"
+              className="carousel slide"
+              data-ride="carousel"
+            >
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <div className="container ">
+                    <div className="row">
+                      <div className="col-md-7 col-lg-6 ">
+                        <div className="detail-box">
+                          <h1>BusManagement</h1>
+                          <p>Your satisfaction is our motivation to improve.</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              {/* <div className="carousel-item ">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7 col-lg-6 ">
-                      <div className="detail-box">
-                        <h1>Fast Food Restaurant</h1>
-                        <p>
-                          Doloremque, itaque aperiam facilis rerum, commodi,
-                          temporibus sapiente ad mollitia laborum quam quisquam
-                          esse error unde. Tempora ex doloremque, labore, sunt
-                          repellat dolore, iste magni quos nihil ducimus libero
-                          ipsam.
-                        </p>
-                        <div className="btn-box">
-                          <a href className="btn1">
-                            Order Now
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7 col-lg-6 ">
-                      <div className="detail-box">
-                        <h1>Fast Food Restaurant</h1>
-                        <p>
-                          Doloremque, itaque aperiam facilis rerum, commodi,
-                          temporibus sapiente ad mollitia laborum quam quisquam
-                          esse error unde. Tempora ex doloremque, labore, sunt
-                          repellat dolore, iste magni quos nihil ducimus libero
-                          ipsam.
-                        </p>
-                        <div className="btn-box">
-                          <a href className="btn1">
-                            Order Now
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
-            {/* <div className="container">
-              <ol className="carousel-indicators">
-                <li
-                  data-target="#customCarousel1"
-                  data-slide-to={0}
-                  className="active"
-                />
-                <li data-target="#customCarousel1" data-slide-to={1} />
-                <li data-target="#customCarousel1" data-slide-to={2} />
-              </ol>
-            </div> */}
-          </div>
-        </section>
-        {/* end slider section */}
-      </div>
+          </section>
+        </div>
     </>
   );
 };
