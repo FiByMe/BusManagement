@@ -11,64 +11,75 @@ class Register extends Component {
               alt="None"
             />
           </div>
-          <section className="book_section layout_padding" style={{padding: "100px"}}>
-            <div className="container">
+          <section
+            className="book_section layout_padding"
+            style={{ padding: "100px" }}
+          >
+            <div className="container" style={{marginTop: "50px"}}>
               <div className="heading_container">
                 <h1>Register</h1>
               </div>
               <div className="form_container">
-                <form action>
-                  <div className="row" style={{ marginBottom: 0 }}>
-                    <div className="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="First name"
-                      />
+                <form action="">
+                  <div className="row" >
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          className="form-input"
+                          placeholder="First name"
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Last name"
-                      />
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          className="form-input"
+                          placeholder="Last name"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div>
+                  <div className="form-group">
                     <input
                       type="email"
-                      className="form-control"
+                      className="form-input"
                       placeholder="Your email"
                     />
                   </div>
-                  <div>
+                  <div className="form-group">
                     <input
                       type="phone"
-                      className="form-control"
+                      className="form-input"
                       placeholder="Phone number"
                     />
                   </div>
-                  <div>
+                  <div className="form-group">
                     <input
                       type="username"
-                      className="form-control"
+                      className="form-input"
                       placeholder="Username"
                     />
                   </div>
                   <div className="row">
-                    <div className="col-md-6 mb-4">
-                      <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Password"
-                      />
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <input
+                          type="password"
+                          className="form-input"
+                          placeholder="Password"
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-6 mb-4">
-                      <input
-                        type="password"
-                        className="form-control"
-                        placeholder="ConfirmPassword"
-                      />
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <input
+                          type="password"
+                          className="form-input"
+                          placeholder="ConfirmPassword"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className="btn_box">

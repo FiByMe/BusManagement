@@ -6,7 +6,7 @@ class Comment extends Component {
       <>
         <section className="client_section layout_padding-bottom">
           <div className="container">
-            <div className="heading_container heading_center psudo_white_primary mb_45">
+            <div className="heading_container heading_center psudo_white_primary mb_45" style={{ margin: "20px"}}>
               <h2>What Customers Says About Us</h2>
             </div>
             <div className="carousel-wrap row">
