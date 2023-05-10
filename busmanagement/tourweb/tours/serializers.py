@@ -59,11 +59,6 @@ class DeliverySerializer(serializers.ModelSerializer):
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
-<<<<<<< HEAD
         model = Review
         fields = '__all__'
 
-=======
-        model = Delivery
-        fields = '__all__'
->>>>>>> 59a4760b777d46a38c33e93d67cf872e835cb692
