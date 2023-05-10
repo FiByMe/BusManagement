@@ -5,7 +5,7 @@ class Tour extends Component {
     return (
       <>
         <section
-          className="food_section layout_padding-bottom"
+          className="food_section layout_padding-bottom bg-color"
           style={{ marginTop: "20px" }}
         >
           <div className="container">
@@ -18,7 +18,7 @@ class Tour extends Component {
                   <div className="box">
                     <div>
                       <div className="img-box">
-                        <img src="/theme/images/1.png" alt="" />
+                        <img src="/theme/images/2.jpg" alt="" />
                       </div>
                       <div className="detail-box">
                         <h5>Name</h5>
@@ -95,7 +95,7 @@ class Tour extends Component {
                   <div className="box">
                     <div>
                       <div className="img-box">
-                        <img src="/theme/images/1.png" alt="" />
+                        <img src="/theme/images/2.jpg" alt="" />
                       </div>
                       <div className="detail-box">
                         <h5>Name</h5>
@@ -172,7 +172,7 @@ class Tour extends Component {
                   <div className="box">
                     <div>
                       <div className="img-box">
-                        <img src="/theme/images/1.png" alt="" />
+                        <img src="/theme/images/2.jpg" alt="" />
                       </div>
                       <div className="detail-box">
                         <h5>Name</h5>
@@ -245,7 +245,7 @@ class Tour extends Component {
                   <div className="box">
                     <div>
                       <div className="img-box">
-                        <img src="/theme/images/1.png" alt="" />
+                        <img src="/theme/images/2.jpg" alt="" />
                       </div>
                       <div className="detail-box">
                         <h5>Name</h5>
@@ -322,7 +322,7 @@ class Tour extends Component {
                   <div className="box">
                     <div>
                       <div className="img-box">
-                        <img src="/theme/images/1.png" alt="" />
+                        <img src="/theme/images/2.jpg" alt="" />
                       </div>
                       <div className="detail-box">
                         <h5>Name</h5>
@@ -399,7 +399,7 @@ class Tour extends Component {
                   <div className="box">
                     <div>
                       <div className="img-box">
-                        <img src="/theme/images/1.png" alt="" />
+                        <img src="/theme/images/2.jpg" alt="" />
                       </div>
                       <div className="detail-box">
                         <h5>Name</h5>

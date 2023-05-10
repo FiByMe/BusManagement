@@ -8,6 +8,8 @@ import Company from "./components/Layouts/Content/Company";
 import Comment from "./components/Layouts/Content/Comment";
 import Login from "../src/components/Layouts/Login";
 import Search from "./components/Layouts/Content/Tour";
+import TourDetails from "./components/Layouts/Content/TourDetails";
+import Tour from "./components/Layouts/Content/Tour";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // function Home() {
@@ -61,7 +63,8 @@ export default function App() {
     // </Router>
     <>
       <Header />
-      <Search />
+      <Tour />
+      <TourDetails />
       <Footer />
     </>
   );
