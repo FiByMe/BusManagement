@@ -3,6 +3,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../src/components/Layouts/Header/Header";
 import Login from "../src/components/Layouts/Login";
+import Register from "../src/components/Layouts/Content/Register";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
@@ -48,6 +49,9 @@ export default function App() {
           
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
           <Route path="/">
             <Header />

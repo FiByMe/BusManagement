@@ -1,6 +1,40 @@
 import React, { Component } from "react";
+import axios from 'axios'
 
 class Register extends Component {
+  state = {
+    userinfo: {
+      username: "",
+      password: "",
+      // firstname: "",
+      email: ""
+      // phone: "",
+    },
+  };
+
+  register = (event) => {
+    console.log(this.state.userinfo);
+    axios({
+      method: "POST",
+      url: "http://127.0.0.1:8000/api/users/",
+      data: {
+        username: this.state.userinfo.username,
+        password: this.state.userinfo.password,
+        email: this.state.userinfo.email
+      },
+    })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  inputChanged = (event) => {
+    const userinf = this.state.userinfo;
+    userinf[event.target.name] = event.target.value;
+    this.setState({ userinfo: userinf });
+  };
+
   render() {
     return (
       <>
@@ -11,7 +45,10 @@ class Register extends Component {
               alt="None"
             />
           </div>
-          <section className="book_section layout_padding" style={{padding: "100px"}}>
+          <section
+            className="book_section layout_padding"
+            style={{ padding: "100px" }}
+          >
             <div className="container">
               <div className="heading_container">
                 <h1>Register</h1>
@@ -37,8 +74,11 @@ class Register extends Component {
                   <div>
                     <input
                       type="email"
+                      name="email"
                       className="form-control"
                       placeholder="Your email"
+                      value={this.state.userinfo.email}
+                      onChange={this.inputChanged}
                     />
                   </div>
                   <div>
@@ -50,29 +90,35 @@ class Register extends Component {
                   </div>
                   <div>
                     <input
-                      type="username"
+                      type="text"
+                      name="username"
                       className="form-control"
                       placeholder="Username"
+                      value={this.state.userinfo.username}
+                      onChange={this.inputChanged}
                     />
                   </div>
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <input
                         type="password"
+                        name="password"
                         className="form-control"
                         placeholder="Password"
+                        value={this.state.userinfo.password}
+                        onChange={this.inputChanged}
                       />
                     </div>
-                    <div className="col-md-6 mb-4">
+                    {/* <div className="col-md-6 mb-4">
                       <input
                         type="password"
                         className="form-control"
                         placeholder="ConfirmPassword"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="btn_box">
-                    <button>Create</button>
+                    <button onClick={this.register}>Register</button>
                   </div>
                 </form>
               </div>
