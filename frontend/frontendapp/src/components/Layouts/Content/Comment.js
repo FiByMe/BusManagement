@@ -10,10 +10,10 @@ class Comment extends Component {
               <h2>What Customers Says About Us</h2>
             </div>
             <div className="carousel-wrap row">
-              <div className="">
+              <div className="owl-carousel client_owl-carousel">
                 <div className="item">
-                  <div className="box">
-                    <div className="detail-box" style={{ padding: "15px" }}>
+                  <div className="box" style={{display: "flex"}}>
+                    <div className="detail-box" style={{ padding: "15px", display: "flex" }}>
                       <div className="row">
                         <div
                           className="col-sm-3"

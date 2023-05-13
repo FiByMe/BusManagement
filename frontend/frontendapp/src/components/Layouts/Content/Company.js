@@ -9,7 +9,11 @@ class Company extends Component {
             <div className="row">
               <div className="col-md-6 ">
                 <div className="img-box">
-                  <img src="/theme/images/meme.jpg" alt="" />
+                  <img
+                    src="/theme/images/1.jpg"
+                    class="rounded-circle"
+                    alt="Avatar"
+                  />
                 </div>
               </div>
               <div className="col-md-6">
