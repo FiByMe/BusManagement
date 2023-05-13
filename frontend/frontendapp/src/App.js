@@ -11,6 +11,7 @@ import Tour from "./components/Layouts/Content/Tour";
 import {Routes, Route } from "react-router-dom";
 import LoginView from "./components/Layouts/Content/LoginView";
 import Layouts from "./components/Layouts/View/Layouts";
+import UserAccount from "./components/Layouts/Content/UserAccount";
 
 // function Home() {
 //   return <h2>Home</h2>;
@@ -29,6 +30,7 @@ export default function App() {
     <Routes>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
+          <Route path="/user" element={<UserAccount />}/>
           <Route path="/" element={<Layouts />}>
             <Route path="comment" element={<Comment />}/>
             <Route path="company" element={<Company />}/>
