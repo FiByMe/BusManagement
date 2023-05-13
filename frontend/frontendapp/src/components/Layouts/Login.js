@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -10,14 +11,16 @@ class Login extends Component {
     console.log(this.state.credentials);
     axios({
       method: "POST",
-      url: "http://127.0.0.1:8000/auth/",
+      url: "http://127.0.0.1:8000/auth/login",
       data: {
         username: this.state.credentials.username,
         password: this.state.credentials.password,
       },
     })
-      .then((data) => {
-        console.log(data);
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("token", response.data.token);
+        this.props.history.push("/home"); // chuyển hướng đến trang home
       })
       .catch((error) => console.error(error));
   };
@@ -29,6 +32,11 @@ class Login extends Component {
   };
 
   render() {
+    // kiểm tra xem token đã tồn tại chưa
+    if (localStorage.getItem("token")) {
+      this.props.history.push("/home"); // nếu tồn tại, chuyển hướng đến trang home
+    }
+
     return (
       <div>
         <h1>Login user form</h1>
@@ -58,4 +66,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
