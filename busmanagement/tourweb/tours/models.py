@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 from ckeditor.fields import RichTextField
@@ -56,12 +57,19 @@ class Trip(models.Model):
     departure_time = models.DateTimeField()
     arrival_time = models.DateTimeField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    available_seats = models.PositiveIntegerField()
-    route = models.ForeignKey(Route, on_delete=models.CASCADE, related_name='trips')
-    bus = models.ForeignKey(Bus, on_delete=models.CASCADE, related_name='trips')
+    available_seats = models.IntegerField(validators=[
+            MaxValueValidator(100),
+            MinValueValidator(1)
+        ])
+    route = models.ForeignKey(Route, on_delete=models.CASCADE, related_name='route')
+    bus = models.ForeignKey(Bus, on_delete=models.CASCADE, related_name='bus')
 
     def __str__(self):
         return f"{self.route.name} - {self.departure_time.strftime('%d-%m-%Y %H:%M')}"
+
+    @property
+    def seats(self):
+        return f"{self.available_seats}"
 
 
 class Ticket(models.Model):
@@ -70,6 +78,7 @@ class Ticket(models.Model):
         ('cash', 'Cash')
     )
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='tickets')
+    seat_number = models.PositiveIntegerField(null=True, blank=True)
     passenger_name = models.CharField(max_length=255)
     passenger_phone = models.CharField(max_length=20)
     passenger_email = models.EmailField()
