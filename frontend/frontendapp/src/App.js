@@ -1,13 +1,9 @@
 import "./App.css";
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "../src/components/Layouts/Header/Header";
 import Footer from "./components/Layouts/Footer/Footer";
-import BestSeller from "./components/Layouts/Content/BestSeller";
-import Company from "./components/Layouts/Content/Company";
-import Comment from "./components/Layouts/Content/Comment";
 import Login from "../src/components/Layouts/Login";
-
 import Register from "../src/components/Layouts/Content/Register";
 
 import Search from "./components/Layouts/Content/Tour";

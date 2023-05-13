@@ -58,18 +58,14 @@ class Trip(models.Model):
     arrival_time = models.DateTimeField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available_seats = models.IntegerField(validators=[
-            MaxValueValidator(100),
-            MinValueValidator(1)
-        ])
+        MaxValueValidator(100),
+        MinValueValidator(1)
+    ])
     route = models.ForeignKey(Route, on_delete=models.CASCADE, related_name='route')
     bus = models.ForeignKey(Bus, on_delete=models.CASCADE, related_name='bus')
 
     def __str__(self):
         return f"{self.route.name} - {self.departure_time.strftime('%d-%m-%Y %H:%M')}"
-
-    @property
-    def seats(self):
-        return f"{self.available_seats}"
 
 
 class Ticket(models.Model):
