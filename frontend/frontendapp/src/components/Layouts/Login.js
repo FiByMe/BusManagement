@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+// import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -10,19 +11,19 @@ class Login extends Component {
     console.log(this.state.credentials);
     axios({
       method: "POST",
-      url: "http://127.0.0.1:8000/auth/",
+      url: "http://127.0.0.1:8000/auth/login",
       data: {
         username: this.state.credentials.username,
         password: this.state.credentials.password,
       },
     })
-    .then((response) => {
-      console.log(response);
-      localStorage.setItem("token", response.data.token);
-      this.props.history.push("/home"); // chuyển hướng đến trang home
-    })
-    .catch((error) => console.error(error));
-};
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("token", response.data.token);
+        this.props.history.push("/home"); // chuyển hướng đến trang home
+      })
+      .catch((error) => console.error(error));
+  };
 
   inputChanged = (event) => {
     const cred = this.state.credentials;
@@ -31,10 +32,11 @@ class Login extends Component {
   };
 
   render() {
-     // kiểm tra xem token đã tồn tại chưa
-     if (localStorage.getItem("token")) {
+    // kiểm tra xem token đã tồn tại chưa
+    if (localStorage.getItem("token")) {
       this.props.history.push("/home"); // nếu tồn tại, chuyển hướng đến trang home
     }
+
     return (
       <div className="hero_area">
           <div className="bg-box">
