@@ -3,9 +3,8 @@ from django.dispatch import receiver
 from .models import Trip, Ticket
 
 
-@receiver(post_save, sender=Trip, weak=False)
-def create_tickets(sender, instance, created, **kwargs):
-    if created:
-        for i in range(instance.available_seats):
-            ticket = Ticket(trip=instance, seat_number=i + 1)
-            ticket.save()
+@receiver(post_save, sender=Trip)
+def create_tickets(sender, instance, **kwargs):
+    for i in range(Trip.seats):
+        ticket = Ticket(trip=instance, seat_number=i + 1)
+        ticket.save()
