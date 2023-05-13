@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django.db import transaction
 from rest_framework import status
 
 from rest_framework import filters
@@ -22,9 +23,9 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-class RegisterView(viewsets.ViewSet):
+class RegisterView(viewsets.ModelViewSet):
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserCreateSerializer
 
     @action(methods=['POST'], detail=False)
     def register(self, request):
