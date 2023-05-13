@@ -14,12 +14,13 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Layouts/Header/Header";
 import Footer from "./components/Layouts/Footer/Footer";
 import Comment from "./components/Layouts/Content/Comment";
+import Login from "./components/Layouts/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Comment />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

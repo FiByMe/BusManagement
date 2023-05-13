@@ -1,11 +1,10 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "../src/components/Layouts/Header/Header";
 import Footer from "./components/Layouts/Footer/Footer";
 import Login from "../src/components/Layouts/Login";
 import Register from "../src/components/Layouts/Content/Register";
-
+import Company from "../src/components/Layouts/Content/Company";
 import Search from "./components/Layouts/Content/Tour";
 import TourDetails from "./components/Layouts/Content/TourDetails";
 import Tour from "./components/Layouts/Content/Tour";
@@ -28,7 +27,7 @@ import Layouts from "./components/Layouts/View/Layouts";
 export default function App() {
   return (
     <Routes>
-          <Route path="/login" element={<LoginView />}/>
+          <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/" element={<Layouts />}>
             <Route path="comment" element={<Comment />}/>

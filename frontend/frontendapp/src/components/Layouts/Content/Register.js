@@ -60,42 +60,46 @@ class Register extends Component {
                       <div className="form-group">
                         <input
                           type="text"
+                          name="firstname"
                           className="form-input"
                           placeholder="First name"
                         />
                       </div>
                     </div>
-                    <div className="col-md-6 mb-4">
+                    <div className="col-md-6">
+                      <div className="form-group">
                       <input
                         type="text"
-                        className="form-control"
+                        name="lastname"
+                        className="form-input"
                         placeholder="Last name"
                       />
+                      </div>
                     </div>
                   </div>
-                  <div>
+                  <div className="form-group">
                     <input
                       type="email"
                       name="email"
-                      className="form-control"
+                      className="form-input"
                       placeholder="Your email"
                       value={this.state.userinfo.email}
                       onChange={this.inputChanged}
                     />
                   </div>
-                  <div>
+                  <div className="form-group">
                     <input
-                      type="phone"
-                       
-                      className="form-control"
+                      type="text"
+                      name="phone"
+                      className="form-input"
                       placeholder="Phone number"
                     />
                   </div>
-                  <div>
+                  <div className="form-group">
                     <input
                       type="text"
                       name="username"
-                      className="form-control"
+                      className="form-input"
                       placeholder="Username"
                       value={this.state.userinfo.username}
                       onChange={this.inputChanged}
