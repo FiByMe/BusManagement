@@ -57,7 +57,9 @@ class Footer extends Component {
               </div>
               <div className="col-md-4 footer-col">
                 <h4>Opening Hours</h4>
-                <p>Everyday</p>
+                <p>Everyday
+                  <i className="glyphicon glyphicon-thumbs-up" />
+                </p>
               </div>
             </div>
           </div>
