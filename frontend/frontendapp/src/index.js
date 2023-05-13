@@ -1,21 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 // import {
 //   createBrowserRouter,
 //   RouterProvider,
 // } from "react-router-dom";
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import Register from "./components/Layouts/Content/Register";
-import LoginView from './components/Layouts/Content/LoginView';
-import Search from './components/Layouts/Content/Tour';
+import LoginView from "./components/Layouts/Content/LoginView";
+import Search from "./components/Layouts/Content/Tour";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Layouts/Header/Header";
+import Footer from "./components/Layouts/Footer/Footer";
+import Comment from "./components/Layouts/Content/Comment";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-   <App />
+    <BrowserRouter>
+      <Comment />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

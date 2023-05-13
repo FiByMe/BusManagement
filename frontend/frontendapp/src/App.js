@@ -13,8 +13,9 @@ import Register from "../src/components/Layouts/Content/Register";
 import Search from "./components/Layouts/Content/Tour";
 import TourDetails from "./components/Layouts/Content/TourDetails";
 import Tour from "./components/Layouts/Content/Tour";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import {Routes, Route } from "react-router-dom";
+import LoginView from "./components/Layouts/Content/LoginView";
+import Layouts from "./components/Layouts/View/Layouts";
 
 // function Home() {
 //   return <h2>Home</h2>;
@@ -30,71 +31,14 @@ import Tour from "./components/Layouts/Content/Tour";
 
 export default function App() {
   return (
-    // <Router>
-    //   <div>
-    //     {/* <nav>
-    //       <ul>
-    //         <li>
-    //           <Link to="/">Home </Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/about">About</Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/users">Users</Link>
-    //         </li>
-    //       </ul>
-    //     </nav> */}
-
-    //     {/* A <Switch> looks through its children <Route>s and
-    //         renders the first one that matches the current URL. */}
-    //     <Switch>
-    //       {/* <Route path="/about">
-    //         <About />
-    //       </Route>
-    //       <Route path="/users">
-    //         <Users /> */}
-    //       {/* </Route> */}
-
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          {/* <Route path="/about">
-            <About />
+    <Routes>
+          <Route path="/login" element={<LoginView />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path="/" element={<Layouts />}>
+            <Route path="comment" element={<Comment />}/>
+            <Route path="company" element={<Company />}/>
+            <Route path="tour" element={<Tour />}/>
           </Route>
-          <Route path="/users">
-            <Users /> */}
-          {/* </Route> */}
-          
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/">
-            <Header />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-
-    //       <Route path="/login">
-    //         <Login />
-    //       </Route>
-    //       <Route path="/">
-    //         <Header />
-    //       </Route>
-    //     </Switch>
-    //   </div>
-    // </Router>
-//     <>
-//       <Header />
-//       <Tour />
-//       <TourDetails />
-//       <Footer />
-//     </>
-
+    </Routes>
   );
 }
